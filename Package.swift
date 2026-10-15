@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/IGAWorksDev/ap-APSSPSDK-SPM.git", from: "3.4.0"),
-        .package(url: "https://github.com/cauly/CaulySPM.git", exact: "3.1.23"),
+        .package(url: "https://github.com/cauly/CaulySPM.git", exact: "3.1.24"),
     ],
     targets: [
         .target(name: "APSSPMediationCauly",
