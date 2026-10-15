@@ -21,7 +21,7 @@ final class CaulyMediationBannerView: UIView {
     
     private var bannerView: CaulyAdView?
     
-    private var rootviewController: UIViewController?
+    private weak var rootviewController: UIViewController?
     
     private var bannerType: APSSPBannerSize
     

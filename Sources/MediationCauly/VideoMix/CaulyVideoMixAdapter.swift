@@ -7,11 +7,15 @@ import UIKit
 import APSSPSDK
 
 final public class CaulyVideoMixAdapter: APSSPVideoMixAdAdapterProtocol {
-    public var rootViewController: UIViewController?
-    public var videoMixDelegate: APSSPVideoMixAdAdapterDelegate?
+    public weak var rootViewController: UIViewController?
+    public weak var videoMixDelegate: APSSPVideoMixAdAdapterDelegate?
     public var videoMixAdType: APSSPVideoMixAdType = .RewardVideo
     private var placementDic: [String: String] = [:]
     private var interstitialAdapter: CaulyInterstitialAdapter?
+
+    deinit {
+        APLogger.debug("CaulyVideoMixAdapter deinit")
+    }
 
     public init(placementDic: [String: String], rootViewController: UIViewController?, info: [String: Any?]) {
         self.placementDic = placementDic; self.rootViewController = rootViewController
@@ -25,7 +29,7 @@ final public class CaulyVideoMixAdapter: APSSPVideoMixAdAdapterProtocol {
             interstitialAdapter = CaulyInterstitialAdapter(placementDic: placementDic, rootViewController: rootViewController, info: [:])
             interstitialAdapter?.connectDelegate(delegate: self)
         case .InterstitialVideo, .RewardVideo:
-            videoMixDelegate?.videoMixAdLoadFail(error: .noAdError, type: videoMixAdType, errorMessage: "Ad type not supported")
+            videoMixDelegate?.videoMixAdLoadFail(error: .nextMediation, type: videoMixAdType, errorMessage: "Ad type not supported")
         @unknown default:
             break
         }
