@@ -20,12 +20,20 @@
 
 ```swift
 .package(url: "https://github.com/IGAWorksDev/ap-APSSPSDK-APSSPMediationCaulyAdapter-SPM.git",
-         exact: "3012400.0.0")
+         exact: "3012500.0.0")
 ```
 
 > `Other Linker Flags` 에 **`-ObjC`** 추가 필수. 미설정 시 어댑터가 런타임에 인식되지 않습니다.
 
 ---
+
+## 3012500.0.0
+
+CaulySDK `3.1.25` 대응
+어댑터 버전 `3.1.25.0`
+APSSPSDK `3.4.0` 이상
+
+2026-11-24
 
 ## 3012400.0.0
 
